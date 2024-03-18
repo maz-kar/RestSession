@@ -14,6 +14,9 @@
 		6BDCDF782BA765510058B690 /* NetworkCallsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDCDF772BA765510058B690 /* NetworkCallsTests.swift */; };
 		6BDCDF822BA765510058B690 /* NetworkCallsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDCDF812BA765510058B690 /* NetworkCallsUITests.swift */; };
 		6BDCDF842BA765510058B690 /* NetworkCallsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDCDF832BA765510058B690 /* NetworkCallsUITestsLaunchTests.swift */; };
+		6BDCDF912BA765920058B690 /* EscapingClosure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDCDF902BA765920058B690 /* EscapingClosure.swift */; };
+		6BDCDF932BA766BF0058B690 /* Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDCDF922BA766BF0058B690 /* Combine.swift */; };
+		6BDCDF952BA768150058B690 /* AsyncAwait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDCDF942BA768150058B690 /* AsyncAwait.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		6BDCDF7D2BA765510058B690 /* NetworkCallsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkCallsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BDCDF812BA765510058B690 /* NetworkCallsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCallsUITests.swift; sourceTree = "<group>"; };
 		6BDCDF832BA765510058B690 /* NetworkCallsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCallsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6BDCDF902BA765920058B690 /* EscapingClosure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapingClosure.swift; sourceTree = "<group>"; };
+		6BDCDF922BA766BF0058B690 /* Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combine.swift; sourceTree = "<group>"; };
+		6BDCDF942BA768150058B690 /* AsyncAwait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwait.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,9 @@
 				6BDCDF682BA765500058B690 /* ContentView.swift */,
 				6BDCDF6A2BA765510058B690 /* Assets.xcassets */,
 				6BDCDF6C2BA765510058B690 /* Preview Content */,
+				6BDCDF902BA765920058B690 /* EscapingClosure.swift */,
+				6BDCDF922BA766BF0058B690 /* Combine.swift */,
+				6BDCDF942BA768150058B690 /* AsyncAwait.swift */,
 			);
 			path = NetworkCalls;
 			sourceTree = "<group>";
@@ -257,6 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BDCDF912BA765920058B690 /* EscapingClosure.swift in Sources */,
+				6BDCDF932BA766BF0058B690 /* Combine.swift in Sources */,
+				6BDCDF952BA768150058B690 /* AsyncAwait.swift in Sources */,
 				6BDCDF692BA765500058B690 /* ContentView.swift in Sources */,
 				6BDCDF672BA765500058B690 /* NetworkCallsApp.swift in Sources */,
 			);
