@@ -27,28 +27,40 @@ import Combine
  // 7. store (cancel subscription if needed)
  */
 
-struct DownloadJSONCombineModel: Identifiable, Codable {
+struct DataModel: Identifiable, Codable {
     let userId: Int
     let id: Int
     let title: String
     let body: String
 }
 
-class DownloadJSONCombineViewModel: ObservableObject {
-    @Published var posts: [DownloadJSONCombineModel] = []
+class DownloadCombineViewModel: ObservableObject {
+    @Published var posts: [DataModel] = []
     var cancellable = Set<AnyCancellable>()
+    
     init() {
         getData()
     }
     
+    func handleCompletion(completion: Subscribers.Completion<any Error>) {
+        switch completion {
+        case .finished:
+            break
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
+    }
+    
     func getData() {
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
         URLSession.shared.dataTaskPublisher(for: url)
             .receive(on: DispatchQueue.main)
             .tryMap(handleOutput)
-            .decode(type: [DownloadJSONCombineModel].self, decoder: JSONDecoder())
+            .decode(type: [DataModel].self, decoder: decoder)
             .replaceError(with: [])
-            .sink(receiveValue: { [weak self] returnedPosts in
+            .sink(receiveValue: { [weak self] returnedPosts in //OR use the other sink and call handleCompletion
                 self?.posts = returnedPosts
             })
             .store(in: &cancellable)
@@ -64,8 +76,8 @@ class DownloadJSONCombineViewModel: ObservableObject {
     }
 }
 
-struct DownloadJSONCombineView: View {
-    @StateObject var viewModel = DownloadJSONCombineViewModel()
+struct DownloadCombineView: View {
+    @StateObject var viewModel = DownloadCombineViewModel()
     var body: some View {
         List {
             ForEach(viewModel.posts) { post in
@@ -83,5 +95,5 @@ struct DownloadJSONCombineView: View {
 }
 
 #Preview {
-    DownloadJSONCombineView()
+    DownloadCombineView()
 }
