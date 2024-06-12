@@ -13,7 +13,6 @@ struct AsyncAwaitDownloadModel: Codable {
     let bio: String
 }
 
-
 class AsyncAwaitDownloadViewModel: ObservableObject {
     @Published var model: AsyncAwaitDownloadModel?
     

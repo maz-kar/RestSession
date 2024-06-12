@@ -16,6 +16,7 @@ struct DownloadEscapingModel: Identifiable, Codable {
 
 class DownloadEscapingViewModel: ObservableObject {
     @Published var posts: [DownloadEscapingModel] = []
+    
     init() {
         getPosts()
     }
