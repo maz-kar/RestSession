@@ -57,7 +57,7 @@ struct AsyncAwaitDownloadView: View {
         }
         .padding()
         Spacer()
-            .task {
+            .task { //TODO: This is the heart
                 do {
                     user = try await viewModel.getPosts()
                 } catch GHError.invalidURL {
